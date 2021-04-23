@@ -1,8 +1,10 @@
 <template>
   <div class="userinfo">
     <div class="text-center">
-      <img class="avatar" src="~@/static/avatar.jpg" alt="">
-      <h3 class="margin-top-sm">梦如南笙</h3>
+      <!-- <img class="avatar" src="~@/static/avatar.jpg" alt=""> -->
+      <img class="avatar" :src="settingDetail.avatar" alt="">
+
+      <h3 class="margin-top-sm">{{ settingDetail.nickname }}</h3>
       <div class="wb-wrap flex">
         <div class="flex-sub w">
           <h3 class="padding-bottom-xs">{{ articleList.length }}</h3>
@@ -41,7 +43,7 @@
       cateItem,
     },
     computed: {
-      ...mapState(['cateList', 'articleList'])
+      ...mapState(['cateList', 'articleList','settingDetail'])
     },
   }
 </script>

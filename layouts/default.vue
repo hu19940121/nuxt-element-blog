@@ -1,5 +1,15 @@
 <template>
   <div>
+    <BgMusic :audio="musicList" />
+    <KanBanNiang :message="{
+        info:'啦啦啦啦',
+        welcome: `欢迎来到 ${settingDetail.nickname}`,
+        home: '心里的花，我想要带你回家。',
+        theme: '好吧，希望你能喜欢我的其他小伙伴。',
+        close: '你知道我喜欢吃什么吗？痴痴地望着你。'
+    }" />
+    <el-backtop></el-backtop>
+
     <el-container>
       <el-header>
         <myheader />
@@ -13,8 +23,17 @@
           <el-main>
             <Nuxt />
           </el-main>
-          <el-footer class="text-center">
-              冀ICP备18037780号  梦如南笙    2020 - 2021
+          <el-footer class="flex justify-center align-center">
+            <span>
+              <svg-icon icon-class="beian" /> <a>{{settingDetail.icp}} </a> 
+            </span>     
+            <span class="margin-left-xs">
+              <svg-icon icon-class="copyright" />  <a>{{ settingDetail.nickname }} </a>
+            </span>   
+            <span>
+              <a> 2020 - 2021 </a>
+            </span>   
+
           </el-footer>
         </el-container>
       </el-container>
@@ -24,11 +43,16 @@
 <script>
   import myheader from './header'
   import sideBar from './sideBar'
+  import { mapState } from 'vuex'
+
   export default {
     data() {
       return {
         isCollapse: false
       };
+    },
+    computed: {
+      ...mapState(['settingDetail','musicList'])
     },
     components: {
       myheader,
@@ -80,9 +104,9 @@ html {
 .el-footer {
   background-color: $mainBg;
   color: #333;
-  height: $navHeight;
-  line-height: $navHeight;
+  min-height: $navHeight;
   border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
 }
 
 .el-aside {
