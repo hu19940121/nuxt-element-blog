@@ -21,7 +21,6 @@ export default {
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css',
   ],
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/element-ui',
@@ -53,7 +52,7 @@ export default {
     stylus: './assets/css/variables.styl',
   },
   axios: {
-    baseURL: 'http://127.0.0.1:7002/api'
+    baseURL: 'https://kaier001.com/api'
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
