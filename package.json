@@ -21,12 +21,6 @@
     "vditor": "^3.8.4",
     "vue-meditor": "^2.1.1"
   },
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "3001"
-    }
-  },
   "devDependencies": {
     "sass": "^1.32.11",
     "stylus": "^0.54.8",
