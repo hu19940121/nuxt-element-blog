@@ -29,13 +29,14 @@ RUN npm install n -g --registry=https://registry.npm.taobao.org
 RUN n 14.5.0 
 # 安装npm依赖
 RUN npm i --registry=https://registry.npm.taobao.org
+
+
+# 拷贝所有源代码到工作目录
+COPY . /usr/src/node-app/nuxtElementBlog
 # 构建
 RUN npm run build
 # 安装pm2 
 RUN npm install pm2 -g --registry=https://registry.npm.taobao.org
-
-# 拷贝所有源代码到工作目录
-COPY . /usr/src/node-app/nuxtElementBlog
 
 # 暴露容器端口
 EXPOSE 3001
