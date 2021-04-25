@@ -40,4 +40,4 @@ COPY . /usr/src/node-app/nuxtElementBlog
 # 暴露容器端口
 EXPOSE 3001
 # 启动node应用
-CMD pm2 start
+CMD pm2 start && pm2 logs nuxt-element-blog
