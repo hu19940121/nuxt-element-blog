@@ -7,6 +7,7 @@
           <el-tag
             class="margin-left-sm"
             size="mini"
+            :type="roundType"
             effect="dark">
             {{ info.articles.length }}
           </el-tag>
@@ -26,6 +27,21 @@
       activeId: {
         type: String,
         default: ''
+      }
+    },
+    data() {
+      return {
+        typeList: [
+          'success',
+          'info',
+          'warning',
+          'danger'
+        ]
+      }
+    },
+    computed: {
+      roundType() {
+       return this.typeList[Math.floor(Math.random()*this.typeList.length + 1)] 
       }
     }
   }

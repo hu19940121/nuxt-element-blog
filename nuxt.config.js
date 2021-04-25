@@ -22,7 +22,7 @@ export default {
     'element-ui/lib/theme-chalk/display.css',
   ],
   server: {
-    host: '0', // default: localhost
+    host: 'localhost', // default: localhost
     port: 3001 // default: 3000
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -33,7 +33,7 @@ export default {
     '@/plugins/kanbanniang/index.js',
     { src: '@/plugins/my.js', mode: 'client'  },
     { src:'~/plugins/api.js' },
-    { src: '@/plugins/filters.js',mode: 'client'},
+    { src: '@/plugins/filters.js'},
     { src: '@/plugins/valine.js',mode: 'client'},
 
     // { src: '@/plugins/vue-meditor.js',  mode: 'client' }
