@@ -22,7 +22,7 @@ export default {
     'element-ui/lib/theme-chalk/display.css',
   ],
   server: {
-    host: 'localhost', // default: localhost
+    host: '0', // default: localhost
     port: 3001 // default: 3000
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
