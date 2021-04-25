@@ -29,8 +29,8 @@ RUN npm install n -g --registry=https://registry.npm.taobao.org
 RUN n 14.5.0 
 # 安装npm依赖
 RUN npm i --registry=https://registry.npm.taobao.org
-
-# RUN yarn install
+# 构建
+RUN npm run build
 # 安装pm2 
 RUN npm install pm2 -g --registry=https://registry.npm.taobao.org
 
