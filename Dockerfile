@@ -20,15 +20,17 @@ WORKDIR /usr/src/node-app/nuxtElementBlog
 COPY package.json /usr/src/node-app/nuxtElementBlog/package.json
 
 # 安装yarn
-RUN npm install yarn -g --registry=https://registry.npm.taobao.org
-RUN yarn --version
+# RUN npm install yarn -g --registry=https://registry.npm.taobao.org
+# RUN yarn --version
 
 # 安装node版本工具
 RUN npm install n -g --registry=https://registry.npm.taobao.org
 # 由于开发环境是在node 14.5.0 开发的 部署时切换到对应的版本
 RUN sudo n 14.5.0 
 # 安装npm依赖
-RUN yarn install
+RUN npm i --registry=https://registry.npm.taobao.org
+
+# RUN yarn install
 # 安装pm2 
 RUN npm install pm2 -g --registry=https://registry.npm.taobao.org
 
