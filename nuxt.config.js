@@ -34,6 +34,8 @@ export default {
     { src: '@/plugins/my.js', mode: 'client'  },
     { src:'~/plugins/api.js' },
     { src: '@/plugins/filters.js',mode: 'client'},
+    { src: '@/plugins/valine.js',mode: 'client'},
+
     // { src: '@/plugins/vue-meditor.js',  mode: 'client' }
   ],
 

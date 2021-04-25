@@ -3,10 +3,12 @@
       <div class="header-left flex align-center">
         <i @click="change" style="font-size:30px;" class="el-icon-menu margin-right-xs hidden-sm-and-up"></i>
         <!-- <el-avatar shape='square' size="medium" :src="avatar"></el-avatar> -->
-        <a href="/" class="flex align-center">
-          <el-avatar shape='square' size="medium" :src="settingDetail.avatar"></el-avatar>
-          <h3 class="padding-left-xs">{{ settingDetail.nickname }}</h3>
-        </a>
+        <nuxt-link to="/" style="border-bottom:none;">
+          <div class="flex align-center">
+            <el-avatar shape='square' size="medium" :src="settingDetail.avatar"></el-avatar>
+            <h3 class="padding-left-xs">{{ settingDetail.nickname }}</h3>
+          </div>
+        </nuxt-link>
       </div>  
     <div class="header-right hidden-sm-and-down">
       <nuxt-link exact class="link margin-right-sm" to="/">

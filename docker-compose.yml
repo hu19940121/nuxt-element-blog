@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  nodejs:
+    build:                          # 这里指的是我们刚刚撸的 Dockerfile 文件 
+      context: .                    
+      dockerfile: Dockerfile
+    container_name: nuxt-element-blog          # 容器名称
+    restart: always                 # 重启方式
+    ports:                          # 映射端口
+      - "3001:3001"

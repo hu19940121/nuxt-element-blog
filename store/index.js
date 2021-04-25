@@ -41,6 +41,8 @@ const actions = {
     commit('CHANGE_ARTICLE_LIST', articleListRes.data.data);
     commit('CHANGE_CATE_LIST', res.data.data);
     let musicRes = await app.$request.getMusicList()
+    let musicList = musicRes.data?.data || []
+    musicList.sort((a,b)=>a.sort - b.sort) //排序 升序 数字越小越靠前
     commit('CHANGE_MUSIC_LIST', musicRes.data.data);
   },
 }

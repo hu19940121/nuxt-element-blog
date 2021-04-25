@@ -12,13 +12,18 @@
     <!-- <client-only placeholder="loading...">
       <MarkdownPreview theme="oneDark" :initialValue="initValue"/>
     </client-only> -->
+      <!-- <span class="valine-comment-count" data-xid="pathname"></span> -->
+      <div id="vcomments">
+      </div>
     </div>
+
   </div>
 </template>
 
 <script>
   import Vditor from 'vditor'
   import 'vditor/dist/index.css'
+  // import Valine from 'valine';
 
   export default {
     data() {
@@ -34,6 +39,16 @@
       }
     },
     mounted () {
+      new this.$valine({
+        placeholder:'快来留言吧～',
+        path: `${window.location.pathname}?id=${this.$route.query.id}`,
+        el:'#vcomments',
+        appId: '2uCIvdlHOF249WLkhegO8fmB-gzGzoHsz',
+        appKey: 'fUkRi53fJzS0rJNRpdU8WPkM',
+        avatar: 'robohash',
+        // enableQQ: true
+        // visitor: true // 阅读量统计
+      }) 
       // this.init()
       this.preview()
     },
@@ -144,6 +159,10 @@
 <style lang="scss" scoped>
 #preview {
   width: 100%;
+}
+#vcomments {
+  margin-top: 20px;
+  /* margin: 0 auto; */
 }
 .articleDetail {
   min-height: 100vh;
