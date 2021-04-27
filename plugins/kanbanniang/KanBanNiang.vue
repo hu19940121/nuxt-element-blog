@@ -70,7 +70,7 @@ export default {
       default:()=>({
         right: '90px',
         bottom: '-20px',
-        opacity: '0.9'
+        opacity: '0.9',
       })
     },
     messageStyle: {
@@ -250,6 +250,7 @@ export default {
     right 50px
     bottom 100px
     color #00adb5
+    z-index 99999999999
     .messageBox
       position fixed
       padding 10px

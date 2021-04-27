@@ -66,6 +66,7 @@
     },
     methods: {
       preview() {
+        const that = this
         Vditor.preview(document.getElementById('preview'),this.articleDetail.content, {
           speech: {
             enable: true,
@@ -79,7 +80,7 @@
             Vditor.outlineRender(document.getElementById('preview'), outlineElement)
             if (outlineElement.innerText.trim() !== '') {
               outlineElement.style.display = 'block'
-              this.initOutline()
+              that.initOutline()
             }
           },
         }) 
@@ -170,6 +171,8 @@
     width:320px ;
     position: fixed;
     left: 0;
+    height: 100vh;
+    overflow-y: auto;
     border-right: 1px solid #eee;
   }
   .placeholder {
@@ -177,6 +180,7 @@
   }
   .right {
     flex: 1;
+    overflow: auto;
     /* width:100% ; */
   }
 }

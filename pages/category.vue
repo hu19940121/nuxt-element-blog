@@ -1,6 +1,6 @@
 <template>
   <div class="category padding-lr-xs">
-    <div class="cate-list padding-top flex">
+    <div class="cate-list padding-top flex flex-wrap">
       <cateItem :activeId="cateId" class="margin-right-sm" :info="cate" v-for="cate in cateList" :key="cate.id"/>
     </div>
     <div class="cate-article-list margin-top-sm">

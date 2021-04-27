@@ -97,7 +97,7 @@ export default {
       default: ()=>({
         left: '10px',
         bottom: '10px',
-        'z-index': '999999'
+        'z-index': '9999999'
       })
     },
     audio: {

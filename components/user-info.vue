@@ -21,7 +21,7 @@
       <h4 class="list-title margin-bottom-xs">
         <i class="el-icon-menu"></i> 分类
       </h4>
-      <cateItem :info="cate" v-for="cate in cateList" :key="cate.id"/>
+      <cateItem @click.native="$emit('cateClick')" :info="cate" v-for="cate in cateList" :key="cate.id"/>
       <!-- <cateItem />
       <cateItem /> -->
     </div>
@@ -44,6 +44,11 @@
     },
     computed: {
       ...mapState(['cateList', 'articleList','settingDetail'])
+    },
+    methods: {
+      cateClick() {
+        console.log('cateClick');
+      }
     },
   }
 </script>

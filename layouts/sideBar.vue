@@ -2,7 +2,7 @@
   <transition name="fade">
     <div class="sideBar-container" v-if="show" @click.stop="$emit('input',false)">
       <div class="bar padding-xs" @click.stop>
-        <userInfo />
+        <userInfo @cateClick="$emit('input',false)" />
       </div>
     </div>
   </transition>
