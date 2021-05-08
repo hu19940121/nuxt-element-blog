@@ -32,6 +32,8 @@ export default {
     '@/plugins/bgm-player/index.js',
     '@/plugins/kanbanniang/index.js',
     { src: '@/plugins/my.js', mode: 'client'  },
+    { src: '@/plugins/pagination.js', mode: 'client'  },
+
     { src:'~/plugins/api.js' },
     { src: '@/plugins/filters.js'},
     { src: '@/plugins/valine.js',mode: 'client'},
@@ -59,6 +61,8 @@ export default {
   },
   axios: {
     baseURL: 'https://kaier001.com/api'
+    // baseURL: 'http://127.0.0.1:7002/api'
+
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

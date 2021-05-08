@@ -9,6 +9,16 @@
       <div class="main flex">
         <div class="main-left">
           <articleCard :info="article" v-for="article in articleList" :key="article.id" />
+          <client-only placeholder="loading...">
+            <Pagination
+              :total="articleCount"
+              :limit="pageSize"
+              :pageSizes="[6,12,18]"
+              :page="pageIndex"
+              @pagination="handlePagination"
+            />
+          </client-only>
+
         </div>
         <el-card :body-style="{ padding:'0px' }" class="margin-left-xs main-right hidden-sm-and-down padding-xs">
           <userInfo />
@@ -21,10 +31,14 @@
 <script>
   import articleCard from '@/components/article-card'
   import userInfo from '@/components/user-info'
-  import { mapState } from 'vuex'
+  import { mapState, mapActions} from 'vuex'
   export default {
     data() {
       return {
+        loading: false,
+        pageIndex: 1,
+        pageSize: 6,
+        // total: 30,
         // articleList:[]
       }
     },
@@ -35,7 +49,7 @@
     //   }
     // },
     computed: {
-      ...mapState(['articleList'])
+      ...mapState(['articleList','articleCount'])
     },
     head: {
       title: '梦如南笙',
@@ -49,7 +63,18 @@
     },
     components: {
       articleCard,
-      userInfo
+      userInfo,
+    },
+    methods: {
+      ...mapActions(['getArticleList']),
+      handlePagination(val) {
+        this.pageIndex = val.page
+        if (this.pageSize !== val.limit) {
+          this.pageIndex = 1
+        }
+        this.pageSize = val.limit
+        this.getArticleList({ pageSize: this.pageSize,pageIndex: this.pageIndex })
+      }
     },
   }
 </script>
