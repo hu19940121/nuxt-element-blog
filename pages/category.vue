@@ -17,9 +17,12 @@
   export default {
     async asyncData({ app, query }) {
       const cateId = query.id
+      let articleRes = await app.$request.getArticleList({ notNeedPage: true })
+      const articleList = articleRes.data.data.list || []
       return {
         cateId,
-        list:[]
+        list:[],
+        articleList
       }
     },
     components: {
@@ -28,7 +31,7 @@
     },
     
     computed: {
-      ...mapState(['cateList','articleList']),
+      ...mapState(['cateList']),
     },
     mounted () {
       this.filterList()

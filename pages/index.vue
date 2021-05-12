@@ -78,7 +78,15 @@
     },
   }
 </script>
-
+<style lang="scss">
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: $titleAColor;  
+  color: #fff;
+}
+.el-backtop {
+  color: $titleAColor;
+}
+</style>
 <style lang="scss" scoped>
 .wrapper {
   min-height: 100vh;
