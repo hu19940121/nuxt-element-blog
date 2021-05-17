@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="banner" :style="{ backgroundImage: `url(${ settingDetail.banner })`  }">
       <p>
-        昔日玫瑰以其名流芳,今人所持唯玫瑰之名
+       {{ settingDetail.bannerTitle || '昔日玫瑰以其名流芳,今人所持唯玫瑰之名' }}
       </p>
     </div>
     <div class="main-container padding-top-xs padding-lr-xs">
