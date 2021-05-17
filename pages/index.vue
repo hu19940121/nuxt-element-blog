@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="banner">
+    <div class="banner" :style="{ backgroundImage: `url(${ settingDetail.banner })`  }">
       <p>
         昔日玫瑰以其名流芳,今人所持唯玫瑰之名
       </p>
@@ -49,7 +49,10 @@
     //   }
     // },
     computed: {
-      ...mapState(['articleList','articleCount'])
+      ...mapState(['articleList','articleCount','settingDetail'])
+    },
+    mounted () {
+      console.log('settingDetail',this.settingDetail);
     },
     head: {
       title: '梦如南笙',
@@ -94,7 +97,10 @@
     height: 450px;
     position: relative;
     text-align: center;
-    background: url('/bg.jpg') center center / cover no-repeat;
+    /* background: url('/bg.jpg') center center / cover no-repeat; */
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding-top: 20px;
     &::after {
       display: block;
