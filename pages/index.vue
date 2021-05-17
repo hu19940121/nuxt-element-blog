@@ -52,17 +52,20 @@
       ...mapState(['articleList','articleCount','settingDetail'])
     },
     mounted () {
-      console.log('settingDetail',this.settingDetail);
     },
-    head: {
-      title: '梦如南笙',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: '昔日玫瑰以其名流芳,今人所持唯玫瑰之名'
-        }
-      ],
+    head() {
+      const favicon = this.settingDetail.favicon || '/favicon.ico'
+      return {
+        title: this.settingDetail.title || '梦如南笙',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.settingDetail.bannerTitle || '昔日玫瑰以其名流芳,今人所持唯玫瑰之名'
+          }
+        ],
+       link: [{ rel: 'icon', type: 'image/x-icon', href: favicon }]
+      }
     },
     components: {
       articleCard,
