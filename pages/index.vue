@@ -56,7 +56,7 @@
     head() {
       const favicon = this.settingDetail.favicon || '/favicon.ico'
       return {
-        title: this.settingDetail.title || '梦如南笙',
+        title: this.settingDetail.bannerTitle || '梦如南笙',
         meta: [
           {
             hid: 'description',
