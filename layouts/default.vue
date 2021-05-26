@@ -23,7 +23,7 @@
           <el-main>
             <Nuxt />
           </el-main>
-          <el-footer class="flex justify-center align-center">
+          <el-footer class="foo flex justify-center align-center">
             <span>
               <svg-icon icon-class="beian" /> <a>{{settingDetail.icp}} </a> 
             </span>     
@@ -90,22 +90,26 @@ html {
 
 .el-header {
   width: 100%;
-  background-color: $mainBg;
+  @include background_color('main_background');
   color: #333;
   height: $navHeight;
   position: fixed;
   top: 0;
-  border-bottom: 1px solid #eee;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  @include border_bottom_color('header_border_bottom');
   z-index: 9999999999;
 }
 .header-placeholder {
   height: $navHeight;
 }
 .el-footer {
-  background-color: $mainBg;
+  @include background_color('main_background');
   color: #333;
   min-height: $navHeight;
-  border-bottom: 1px solid #eee;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  @include border_bottom_color('header_border_bottom');
   flex-wrap: wrap;
 }
 
@@ -118,7 +122,7 @@ html {
 
 .el-main {
   padding: 0;
-  background-color: $mainBg;
+  @include background_color('main_background');
   color: #333;
 }
 

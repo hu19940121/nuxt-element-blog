@@ -63,7 +63,7 @@
   .bar {
     width: 70%;
     height: 100%;
-    background-color: $mainBg;
+    @include background_color('main_background');
     z-index: 999;
     overflow-y: scroll;
   }

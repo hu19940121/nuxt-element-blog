@@ -49,7 +49,7 @@
     //   }
     // },
     computed: {
-      ...mapState(['articleList','articleCount','settingDetail'])
+      ...mapState(['articleList','articleCount','settingDetail','currentTheme'])
     },
     mounted () {
     },
@@ -129,10 +129,13 @@
     }
   }
   .main-container {
+    @include background_color('main_background');
     .main {
       max-width: 1126px;
       min-height: 100px;
       margin: 0 auto;
+      @include background_color('main_background');
+
       &-left {
         flex:1;
       }

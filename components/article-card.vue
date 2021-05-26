@@ -30,8 +30,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
 .box-card {
   .title {
     position: relative;

@@ -4,3 +4,72 @@ a {
   color: $titleAColor;
   text-decoration: none;
 }
+.el-card {
+  @include border_color('article_card_border');
+  @include background_color('main_background');
+
+}
+.el-card__header {
+  @include border_bottom_color('article_card_border');
+
+}
+
+.pagination-container {
+  @include background_color('main_background');
+
+}
+.el-pagination.is-background .el-pager li {
+  @include background_color('main_background');
+
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev{
+  @include background_color('main_background');
+
+}
+.el-pagination__editor.el-input .el-input__inner {
+  @include background_color('main_background');
+}
+.el-pagination .el-select .el-input .el-input__inner  {
+  @include background_color('main_background');
+}
+.el-divider {
+  @include background_color('main_background');
+
+}
+.vditor-reset pre>code {
+  @include background_color('vditor_reset_pre_code');
+}
+.vditor-reset h1,.vditor-reset h2,.vditor-reset h3,.vditor-reset h4,.vditor-reset h5 {
+  @include border_color('vditor_reset_pre_code');
+
+}
+.vditor-reset hr {
+  @include background_color('vditor_reset_pre_code');
+
+}
+.el-dropdown-menu {
+  @include background_color('main_background');
+  @include border_color('article_card_border');
+
+}
+.el-backtop {
+  @include background_color('vditor_reset_pre_code');
+
+}
+
+.el-popover {
+  @include background_color('main_background');
+
+}
+
+.el-radio-button__orig-radio:checked+.el-radio-button__inner {
+  @include background_color('theme_choose_bg');
+
+}
+.el-radio-button:first-child .el-radio-button__inner {
+  @include background_color('theme_un_choose_bg');
+
+}
+// body {
+//   // background-color: red;
+// }

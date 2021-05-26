@@ -18,13 +18,13 @@
     "moment": "^2.29.1",
     "nuxt": "^2.15.3",
     "nuxt-svg-sprite-loader": "^1.0.15",
-    "sass-loader": "10",
+    "sass-loader": "^8.0.2",
     "valine": "^1.4.14",
     "vditor": "^3.8.4",
     "vue-meditor": "^2.1.1"
   },
   "devDependencies": {
-    "sass": "^1.32.11",
+    "node-sass": "^4.14.1",
     "stylus": "^0.54.8",
     "stylus-loader": "3.0.2",
     "svg-sprite-loader": "^6.0.5"

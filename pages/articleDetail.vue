@@ -174,6 +174,7 @@
     height: 100vh;
     overflow-y: auto;
     border-right: 1px solid #eee;
+    @include border_color('vditor_reset_pre_code');
   }
   .placeholder {
     width:320px ;

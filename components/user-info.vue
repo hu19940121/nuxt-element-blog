@@ -55,6 +55,7 @@
 
 <style lang="scss" scoped>
 .userinfo {
+  @include background_color('main_background');
   .avatar {
     width: 128px;
     height: 128px;

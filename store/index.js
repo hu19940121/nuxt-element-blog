@@ -11,7 +11,8 @@ const state = {
   cateList:[],
   articleList: [],
   settingDetail: {},
-  articleCount: 0
+  articleCount: 0,
+  currentTheme: 'light' //主题
 }
 
 const mutations = {
@@ -32,7 +33,9 @@ const mutations = {
   },
   CHANGE_ARTICLE_COUNT: (state, count)=>{
     state.articleCount = count
-
+  },
+  CHANGE_CURRENT_THEME: (state, theme)=>{
+    state.currentTheme = theme
   }
 }
 

@@ -1,0 +1,31 @@
+//当HTML的data-theme为dark时，样式引用dark
+//data-theme为其他值时，就采用组件库的默认样式
+//这里我只定义了两套主题方案，想要再多只需在`$themes`里加就行了
+//注意一点是，每套配色方案里的key可以自定义但必须一致，不然就会混乱
+
+$themes: (
+
+    light: (
+        //字体
+        main_background: #fff,
+        header_border_bottom: #ccc,
+        article_card_border: #EBEEF5,
+        vditor_reset_pre_code: #f8f8f8,
+        theme_choose_bg: #2c3e50,
+        theme_un_choose_bg: #fff
+
+    ),
+    
+    dark: (
+        //字体
+        main_background: #000,
+        header_border_bottom: #000,
+        article_card_border: #33CCCC,
+        vditor_reset_pre_code: #009999,
+        theme_choose_bg: #2c3e50,
+        theme_un_choose_bg: #000
+
+
+
+    )
+);

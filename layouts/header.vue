@@ -10,7 +10,23 @@
           </div>
         </nuxt-link>
       </div>  
-    <div class="header-right hidden-sm-and-down">
+    <div class="header-right hidden-sm-and-down flex align-center">
+      <el-popover
+        placement="bottom"
+        width="200"
+        trigger="click"
+        >
+        <div>
+          <el-radio-group v-model="currentTheme" size="small">
+            <el-radio-button label="dark"></el-radio-button>
+            <el-radio-button label="light"></el-radio-button>
+            <!-- <el-radio-button label="auto"></el-radio-button> -->
+          </el-radio-group>
+        </div>
+        <div  slot="reference">
+          <svg-icon class="margin-right-xs pointer" style="font-size:24px;" icon-class="sepan" /> 
+        </div>
+      </el-popover>
       <nuxt-link exact class="link margin-right-sm" to="/">
         <i class="el-icon-s-home"></i> Home
       </nuxt-link>
@@ -49,16 +65,36 @@
   export default {
     data() {
       return {
-        avatar: require('@/static/avatar.jpg')
+        avatar: require('@/static/avatar.jpg'),
       }
     },
     mounted () {
+      this.changeTheme()
+    },
+    watch: {
+      currentTheme() {
+        this.changeTheme()
+      }
     },
     computed: {
-      ...mapState(['cateList','settingDetail'])
+      ...mapState(['cateList','settingDetail']),
+      currentTheme: {
+        // custome get() and set() of this local computed property
+        get () {
+          // get stored message
+          return this.$store.state.currentTheme
+        },
+        set (value) {
+          // commit a mutation to set message
+          this.$store.commit('CHANGE_CURRENT_THEME', value)
+        }
+      },
     },
     methods: {
       ...mapActions(['changeSideBarStatus']),
+      changeTheme() {
+        window.document.documentElement.setAttribute('data-theme', this.currentTheme)
+      },
       change() {
         this.changeSideBarStatus(!this.$store.state.sideBarStatus)
       }
@@ -68,10 +104,11 @@
 
 <style lang="scss" scoped>
 .header {
-  background-color: $mainBg;
   color: #333;
   height: $navHeight;
-  border-bottom: 1px solid #eee;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  @include border_bottom_color('header_border_bottom');
 
 }
 .link {

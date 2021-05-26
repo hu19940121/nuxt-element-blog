@@ -55,7 +55,7 @@ export default {
   ],
   styleResources: {
     sass: [],
-    scss: './assets/css/index.scss',
+    scss: ['./assets/css/_handle.scss','./assets/css/index.scss'],
     less: [],
     stylus: './assets/css/variables.styl',
   },
