@@ -51,9 +51,10 @@
 .cate {
   font-size: 12px;
   .active {
+    
     background-color: $titleAColor;
    a {
-     color: #fff;
+      @include font_color('cate_item_active_color');
    }
   }
 }

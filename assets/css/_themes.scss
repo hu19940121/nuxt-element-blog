@@ -12,8 +12,11 @@ $themes: (
         article_card_border: #EBEEF5,
         vditor_reset_pre_code: #f8f8f8,
         theme_choose_bg: #2c3e50,
-        theme_un_choose_bg: #fff
-
+        theme_un_choose_bg: #fff,
+        cate_item_active_color: #000,
+        pagination_item_bg: #f4f4f5,
+        pagination_item_bg_active: #3eaf7c,
+        vditor_font_color: #24292e
     ),
     
     dark: (
@@ -23,8 +26,11 @@ $themes: (
         article_card_border: #33CCCC,
         vditor_reset_pre_code: #009999,
         theme_choose_bg: #2c3e50,
-        theme_un_choose_bg: #000
-
+        theme_un_choose_bg: #000,
+        cate_item_active_color: #fff,
+        pagination_item_bg: #000,
+        pagination_item_bg_active: #666,
+        vditor_font_color: #888
 
 
     )

@@ -19,9 +19,12 @@ a {
 
 }
 .el-pagination.is-background .el-pager li {
-  @include background_color('main_background');
-
+  @include background_color('pagination_item_bg');
 }
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  @include background_color('pagination_item_bg_active');
+}
+
 .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev{
   @include background_color('main_background');
 
@@ -41,10 +44,14 @@ a {
 }
 .vditor-reset h1,.vditor-reset h2,.vditor-reset h3,.vditor-reset h4,.vditor-reset h5 {
   @include border_color('vditor_reset_pre_code');
+  @include font_color('vditor_font_color');
 
 }
 .vditor-reset hr {
   @include background_color('vditor_reset_pre_code');
+}
+.vditor-reset p, .vditor-reset ul, .vditor-reset ol{
+  @include font_color('vditor_font_color');
 
 }
 .el-dropdown-menu {
