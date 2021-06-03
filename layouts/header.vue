@@ -11,6 +11,23 @@
         </nuxt-link>
       </div>  
     <div class="header-right hidden-sm-and-down flex align-center">
+      <el-select
+        class="margin-right-sm"
+        v-model="value"
+        size="small"
+        filterable
+        remote
+        reserve-keyword
+        placeholder="请输入关键词"
+        :remote-method="remoteMethod"
+        :loading="loading">
+          <NuxtLink :key="item.id" v-for="item in options" :to="`/articleDetail?id=${item.id}`">
+            <el-option
+              :label="item.title"
+              :value="item.id">
+            </el-option>
+          </NuxtLink>
+      </el-select> 
       <el-popover
         placement="bottom"
         width="200"
@@ -66,6 +83,12 @@
     data() {
       return {
         avatar: require('@/static/avatar.jpg'),
+
+        options: [],
+        value: '',
+        list: [],
+        loading: false,
+
       }
     },
     mounted () {
@@ -97,6 +120,19 @@
       },
       change() {
         this.changeSideBarStatus(!this.$store.state.sideBarStatus)
+      },
+      remoteMethod(query) {
+        if (query !== '') {
+          this.loading = true;
+          this.$request.getArticleList({
+            keywords: query
+          }).then((res)=>{
+            this.loading = false
+            this.options = res.data.data.list
+          })
+        } else {
+          this.options = [];
+        }
       }
     },
   }

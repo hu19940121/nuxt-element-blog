@@ -7,7 +7,7 @@
     </div>
     <div class="main-container padding-top-xs padding-lr-xs">
       <div class="main flex">
-        <div class="main-left">
+        <div class="main-left" v-loading="loading">
           <articleCard :info="article" v-for="article in articleList" :key="article.id" />
           <client-only placeholder="loading...">
             <Pagination
@@ -79,7 +79,12 @@
           this.pageIndex = 1
         }
         this.pageSize = val.limit
-        this.getArticleList({ pageSize: this.pageSize,pageIndex: this.pageIndex })
+        this.loading = true
+        this.getArticleList({ pageSize: this.pageSize,pageIndex: this.pageIndex }).then(()=>{
+          this.loading = false
+        }).catch(()=>{
+          this.loading = false
+        })
       }
     },
   }

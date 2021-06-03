@@ -21,7 +21,7 @@
         <sideBar v-model="$store.state.sideBarStatus" />
         <el-container>
           <el-main>
-            <Nuxt />
+            <Nuxt   />
           </el-main>
           <el-footer class="foo flex justify-center align-center">
             <span>
@@ -48,11 +48,16 @@
   export default {
     data() {
       return {
+        ooo: '',
         isCollapse: false
       };
     },
+
     computed: {
       ...mapState(['settingDetail','musicList'])
+    },
+    mounted () {
+      console.log('route.fullpath',this.$route.fullPath);
     },
     components: {
       myheader,
