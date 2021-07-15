@@ -24,12 +24,15 @@
             <Nuxt   />
           </el-main>
           <el-footer class="foo flex justify-center align-center">
-            <span>
-              <svg-icon icon-class="beian" /> <a>{{settingDetail.icp}} </a> 
-            </span>     
-            <span class="margin-left-xs">
-              <svg-icon icon-class="copyright" />  <a>{{ settingDetail.nickname }} </a>
-            </span>   
+            <a href="https://beian.miit.gov.cn/" target="_blank">
+              <span>
+                <svg-icon icon-class="beian" /> <a>{{settingDetail.icp}} </a> 
+              </span>     
+              <span class="margin-left-xs">
+                <svg-icon icon-class="copyright" />  <a>{{ settingDetail.nickname }} </a>
+              </span> 
+            </a>
+  
             <span>
               <a> 2020 - 2021 </a>
             </span>   
